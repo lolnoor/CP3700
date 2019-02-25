@@ -154,7 +154,7 @@ export default class App extends Component {
           onPress={this.pickAvatar}
         />
          <Button
-          title={'Upload Image '}
+          title={'Upload Image'}
           style={styles.input}
           onPress={this.pickimage}
         />

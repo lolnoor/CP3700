@@ -39,7 +39,7 @@ export const writeMEssages = functions.firestore
             message = "Bye"
         }
         if(message){
-            await admin.firestore().collection("chat").add({Message: message +" "+ user.name + ":",Username:"bot@Bot.com",Time:new Date()})
+            await admin.firestore().collection("chat").add({Message: message +" "+ user.name + " : ",Username:"bot@Bot.com",Time:new Date()})
         }
     });
 export const addMessage= functions.https.onCall(async(data, context) => {
@@ -82,7 +82,7 @@ export const addMessage= functions.https.onCall(async(data, context) => {
     // context.send("Hello from Firebase!");
 });
 
-export const updateImage= functions.https.onRequest(async(req, res) => {
+// export const updateImage= functions.https.onRequest(async(req, res) => {
     // find all images (users with caption)
     // const message = data.message
         const querySnapshot = await admin.firestore().collection("users").where("caption",">","").get()
